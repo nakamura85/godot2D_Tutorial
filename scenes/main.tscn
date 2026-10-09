@@ -1,0 +1,196 @@
+[gd_scene load_steps=10 format=3]
+
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_main"]
+[ext_resource type="PackedScene" path="res://scenes/player.tscn" id="2_player"]
+[ext_resource type="PackedScene" path="res://scenes/coin.tscn" id="3_coin"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ground_a"]
+size = Vector2(1300, 80)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ground_b"]
+size = Vector2(1500, 80)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_plat_220"]
+size = Vector2(220, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_plat_200"]
+size = Vector2(200, 20)
+
+[sub_resource type="LabelSettings" id="LabelSettings_score"]
+font_size = 28
+outline_size = 8
+outline_color = Color(0.1, 0.1, 0.15, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_win"]
+font_size = 52
+outline_size = 10
+outline_color = Color(0.1, 0.1, 0.15, 1)
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_main")
+
+[node name="Background" type="ColorRect" parent="."]
+offset_left = -500.0
+offset_top = -400.0
+offset_right = 2450.0
+offset_bottom = 724.0
+color = Color(0.53, 0.78, 0.92, 1)
+
+[node name="GroundA" type="StaticBody2D" parent="."]
+position = Vector2(150, 680)
+
+[node name="Visual" type="ColorRect" parent="GroundA"]
+offset_left = -650.0
+offset_top = -40.0
+offset_right = 650.0
+offset_bottom = 40.0
+color = Color(0.35, 0.55, 0.35, 1)
+
+[node name="Col" type="CollisionShape2D" parent="GroundA"]
+shape = SubResource("RectangleShape2D_ground_a")
+
+[node name="GroundB" type="StaticBody2D" parent="."]
+position = Vector2(1700, 680)
+
+[node name="Visual" type="ColorRect" parent="GroundB"]
+offset_left = -750.0
+offset_top = -40.0
+offset_right = 750.0
+offset_bottom = 40.0
+color = Color(0.35, 0.55, 0.35, 1)
+
+[node name="Col" type="CollisionShape2D" parent="GroundB"]
+shape = SubResource("RectangleShape2D_ground_b")
+
+[node name="Platform1" type="StaticBody2D" parent="."]
+position = Vector2(500, 500)
+
+[node name="Visual" type="ColorRect" parent="Platform1"]
+offset_left = -110.0
+offset_top = -10.0
+offset_right = 110.0
+offset_bottom = 10.0
+color = Color(0.55, 0.38, 0.25, 1)
+
+[node name="Col" type="CollisionShape2D" parent="Platform1"]
+shape = SubResource("RectangleShape2D_plat_220")
+
+[node name="Platform2" type="StaticBody2D" parent="."]
+position = Vector2(800, 380)
+
+[node name="Visual" type="ColorRect" parent="Platform2"]
+offset_left = -100.0
+offset_top = -10.0
+offset_right = 100.0
+offset_bottom = 10.0
+color = Color(0.55, 0.38, 0.25, 1)
+
+[node name="Col" type="CollisionShape2D" parent="Platform2"]
+shape = SubResource("RectangleShape2D_plat_200")
+
+[node name="Platform3" type="StaticBody2D" parent="."]
+position = Vector2(1100, 280)
+
+[node name="Visual" type="ColorRect" parent="Platform3"]
+offset_left = -100.0
+offset_top = -10.0
+offset_right = 100.0
+offset_bottom = 10.0
+color = Color(0.55, 0.38, 0.25, 1)
+
+[node name="Col" type="CollisionShape2D" parent="Platform3"]
+shape = SubResource("RectangleShape2D_plat_200")
+
+[node name="Platform4" type="StaticBody2D" parent="."]
+position = Vector2(1400, 400)
+
+[node name="Visual" type="ColorRect" parent="Platform4"]
+offset_left = -110.0
+offset_top = -10.0
+offset_right = 110.0
+offset_bottom = 10.0
+color = Color(0.55, 0.38, 0.25, 1)
+
+[node name="Col" type="CollisionShape2D" parent="Platform4"]
+shape = SubResource("RectangleShape2D_plat_220")
+
+[node name="Platform5" type="StaticBody2D" parent="."]
+position = Vector2(1750, 280)
+
+[node name="Visual" type="ColorRect" parent="Platform5"]
+offset_left = -100.0
+offset_top = -10.0
+offset_right = 100.0
+offset_bottom = 10.0
+color = Color(0.55, 0.38, 0.25, 1)
+
+[node name="Col" type="CollisionShape2D" parent="Platform5"]
+shape = SubResource("RectangleShape2D_plat_200")
+
+[node name="Platform6" type="StaticBody2D" parent="."]
+position = Vector2(2100, 450)
+
+[node name="Visual" type="ColorRect" parent="Platform6"]
+offset_left = -110.0
+offset_top = -10.0
+offset_right = 110.0
+offset_bottom = 10.0
+color = Color(0.55, 0.38, 0.25, 1)
+
+[node name="Col" type="CollisionShape2D" parent="Platform6"]
+shape = SubResource("RectangleShape2D_plat_220")
+
+[node name="Player" parent="." instance=ExtResource("2_player")]
+position = Vector2(150, 560)
+
+[node name="Coin1" parent="." instance=ExtResource("3_coin")]
+position = Vector2(200, 590)
+
+[node name="Coin2" parent="." instance=ExtResource("3_coin")]
+position = Vector2(500, 440)
+
+[node name="Coin3" parent="." instance=ExtResource("3_coin")]
+position = Vector2(800, 320)
+
+[node name="Coin4" parent="." instance=ExtResource("3_coin")]
+position = Vector2(1100, 220)
+
+[node name="Coin5" parent="." instance=ExtResource("3_coin")]
+position = Vector2(1400, 340)
+
+[node name="Coin6" parent="." instance=ExtResource("3_coin")]
+position = Vector2(1750, 220)
+
+[node name="Coin7" parent="." instance=ExtResource("3_coin")]
+position = Vector2(2100, 390)
+
+[node name="Coin8" parent="." instance=ExtResource("3_coin")]
+position = Vector2(875, 560)
+
+[node name="UI" type="CanvasLayer" parent="."]
+
+[node name="ScoreLabel" type="Label" parent="UI"]
+offset_left = 24.0
+offset_top = 16.0
+offset_right = 400.0
+offset_bottom = 60.0
+text = "金币：0 / 8"
+label_settings = SubResource("LabelSettings_score")
+
+[node name="WinLabel" type="Label" parent="UI"]
+visible = false
+anchor_right = 1.0
+offset_top = 240.0
+offset_bottom = 330.0
+text = "收集完成！按 R 重新开始"
+label_settings = SubResource("LabelSettings_win")
+horizontal_alignment = 1
+
+[connection signal="collected" from="Coin1" to="." method="_on_coin_collected"]
+[connection signal="collected" from="Coin2" to="." method="_on_coin_collected"]
+[connection signal="collected" from="Coin3" to="." method="_on_coin_collected"]
+[connection signal="collected" from="Coin4" to="." method="_on_coin_collected"]
+[connection signal="collected" from="Coin5" to="." method="_on_coin_collected"]
+[connection signal="collected" from="Coin6" to="." method="_on_coin_collected"]
+[connection signal="collected" from="Coin7" to="." method="_on_coin_collected"]
+[connection signal="collected" from="Coin8" to="." method="_on_coin_collected"]
