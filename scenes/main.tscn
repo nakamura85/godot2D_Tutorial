@@ -1,6 +1,6 @@
-[gd_scene load_steps=10 format=3]
+﻿[gd_scene load_steps=10 format=3]
 
-[ext_resource type="Script" path="res://scripts/main.gd" id="1_main"]
+[ext_resource type="Script" path="res://scripts/Main.cs" id="1_main"]
 [ext_resource type="PackedScene" path="res://scenes/player.tscn" id="2_player"]
 [ext_resource type="PackedScene" path="res://scenes/coin.tscn" id="3_coin"]
 
@@ -185,12 +185,3 @@ offset_bottom = 330.0
 text = "收集完成！按 R 重新开始"
 label_settings = SubResource("LabelSettings_win")
 horizontal_alignment = 1
-
-[connection signal="collected" from="Coin1" to="." method="_on_coin_collected"]
-[connection signal="collected" from="Coin2" to="." method="_on_coin_collected"]
-[connection signal="collected" from="Coin3" to="." method="_on_coin_collected"]
-[connection signal="collected" from="Coin4" to="." method="_on_coin_collected"]
-[connection signal="collected" from="Coin5" to="." method="_on_coin_collected"]
-[connection signal="collected" from="Coin6" to="." method="_on_coin_collected"]
-[connection signal="collected" from="Coin7" to="." method="_on_coin_collected"]
-[connection signal="collected" from="Coin8" to="." method="_on_coin_collected"]

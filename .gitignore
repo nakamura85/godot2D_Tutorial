@@ -4,5 +4,13 @@
 export.cfg
 export_presets.cfg
 
+# .NET / C# build outputs
+.mono/
+bin/
+obj/
+*.user
+.vs/
+.idea/
+
 # System/tool ignores
 .DS_Store
